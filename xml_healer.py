@@ -19,6 +19,7 @@ import re
 out = 'out'             # Папка с обработанными файлами
 enc = 'windows-1251'    # Кодировка файлов
 ext = '.xml'            # Расширение файла
+EXT = '.XML'
 end = '</Файл>'         # Закрывающий тег
 file_dir = os.getcwd()  # Текущая директория
 filler = '='*70         # Заполнитель
@@ -86,6 +87,9 @@ for file in file_list:
     if file.endswith(ext):
         xml_list.append(file)
         healer(file, enc)
+    elif file.endswith(EXT):
+        xml_list.append(file)
+        healer(file, enc)    
     else:
         print('Не является XML-файлом\n')
 
